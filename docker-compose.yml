@@ -11,7 +11,7 @@ services:
       MYSQL_DATABASE: shipping_01
       MYSQL_PASSWORD: root
     ports:
-      - 3307:3306
+      - 3306:3306
 
   backend:
     build:

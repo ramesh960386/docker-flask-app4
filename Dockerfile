@@ -28,12 +28,14 @@ COPY app.py .
 # By default, listen on port 5000
 EXPOSE 5000
 
-## Add the wait script to the image
-# ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /wait
-# RUN chmod +x /wait
+# Add the wait script to the image
+ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /wait
+RUN chmod +x /wait
+
 # #start-up command
 # CMD /wait && npm start
+CMD /wait && flask run
 
 # Specify the command to run on container start
 # CMD [ "python", "./app.py" ]
-CMD ["flask", "run"]
+# CMD ["flask", "run"]
